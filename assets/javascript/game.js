@@ -2,17 +2,24 @@ var computerChoices = [["s","t","a","r","k"],["t","y","r","e","l","l"],["l","a",
 var win = 0;
 var losses = 0;
 var guesses = 12;
-var guessedLetters = "";
+var guessedLetters = [];
 
 document.onkeydown = function(Event) {
     var userGuess = event.key;
 
-    var pickName = Math.floor(Math.random() * computerChoices.length);
+    var pickName = (Math.floor(Math.random() * computerChoices.length) - 1);
     
     var nameBlanks = "";
+    guessedLetters.push(userGuess);
     for (var i = 0; i < computerChoices[pickName].length; i++)
     {
-        nameBlanks = nameBlanks + "_ ";
+        for (var j = 0; j < guessedLetters.length; j++) {
+            if (guessedLetters[j] == computerChoices[pickName][i])
+            nameBlanks = nameBlanks + guessedLetters[j];
+            else {
+                nameBlanks = nameBlanks + "_ ";
+            }
+        }
     }
     var html = 
         "<p>" + nameBlanks + "</p>";
