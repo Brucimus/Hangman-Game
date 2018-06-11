@@ -18,9 +18,15 @@ document.onkeydown = function(Event) {
     gameOver = false;
     }
     
+
+    //doesn't push letters to guessed letters list if repeated letter
     nameBlanks = "";
+    if (guessedLetters.includes(userGuess)) {
+        return;
+    } else {
+        guessedLetters.push(userGuess);
+    }
     
-    guessedLetters.push(userGuess);
 
     //recreates word every time letter is pressed
     for (var i = 0; i < computerChoices[pickName].length; i++)
@@ -42,7 +48,8 @@ document.onkeydown = function(Event) {
 
     }
     var html = 
-        "<p>" + nameBlanks + "</p>";
+        "<p>" + nameBlanks + "</p>" +
+        "<p>" + guessedLetters + "</p>";
 
     document.querySelector("#game").innerHTML = html;
 }
