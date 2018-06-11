@@ -12,7 +12,10 @@ var gameOver = true;
 
 document.onkeydown = function(Event) {
     var userGuess = event.key;
+
+    //allows uper case guesses
     userGuess = userGuess.toLowerCase();
+
     //chooses new name if game is over
     if (gameOver === true) {
     pickName = Math.floor(Math.random() * computerChoices.length);
@@ -52,9 +55,31 @@ document.onkeydown = function(Event) {
             }
 
     }
+
+    if (nameBlanks.includes("_") === false) {
+        win++;
+        gameOver = true;
+        nameBlanks = "";
+        guesses = 12;
+        guessedLetters = [];
+    } else {
+        guesses--;
+    }
+
+    if (guesses == 0) {
+        losses++;
+        gameOver = true;
+        nameBlanks = "";
+        guesses = 12;
+        guessedLetters = [];
+    }
+    
     var html = 
         "<p>" + nameBlanks + "</p>" +
-        "<p>" + guessedLetters + "</p>";
+        "<p>Wins: " + win + "</p>" +
+        "<p>Losses: " + losses + "</p>" +
+        "<p>Guesses Left: " + guesses + "</p>" +
+        "<p>Guessed Letters: " + guessedLetters + "</p>";
 
     document.querySelector("#game").innerHTML = html;
 }
