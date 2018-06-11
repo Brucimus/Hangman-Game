@@ -7,15 +7,22 @@ var nameBlanks = ""
 var pickName = -1;
 var guessedLetterInWord = false;
 var tempLetter = "";
+var gameOver = true;
 
 document.onkeydown = function(Event) {
     var userGuess = event.key;
 
-    pickName =  2;//(Math.floor(Math.random() * computerChoices.length) - 1);
+    //chooses new name if game is over
+    if (gameOver === true) {
+    pickName = Math.floor(Math.random() * computerChoices.length);
+    gameOver = false;
+    }
     
     nameBlanks = "";
     
     guessedLetters.push(userGuess);
+
+    //recreates word every time letter is pressed
     for (var i = 0; i < computerChoices[pickName].length; i++)
     {
         for (var j = 0; j < guessedLetters.length; j++) {
