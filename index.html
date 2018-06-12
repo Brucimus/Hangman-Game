@@ -12,25 +12,30 @@
   
     </head>
     <body>
-        <!--Title-->
-        <h1 class="text-center">
-            The Hangman Game
-        </h1>
-
+ 
         <div class="jumbotron">
+            <!--Title-->
             <h1 class="display-4 text-center">The Hangman Game</h1>
+
+            <!--How to play game-->
             <p class="lead text-center">Guess the word before it's too late.</p>
             <hr class="my-4">
-            <p id="game" class="text-center">It uses utility classes for typography and spacing to space content out within the larger container.</p>
+
+            <!--Place where game is displayed-->
+            <p id="game" class="text-center"></p>
         </div>
 
-        <!--How to play game-->
-        <h2 class="text-center">
-            Guess the word before it's too late.
-        </h2>
-
-        <!--Place where game is displayed-->
-        <div>
+        <div class="container">
+            <div class="row">
+                <!--wins and losses-->
+                <div class="col-sm-4 text-center" id="wins"></div>
+                <div class="col-sm-4 text-center" id="guessesLeft"></div>
+                <div class="col-sm-4 text-center" id="losses"></div>
+            </div>
+            <div class="row">
+                <!--guessed letters-->
+                <div class="col-sm-12 text-center" id="guessed"></div>
+            </div>
         </div>
     </body>
 </html>

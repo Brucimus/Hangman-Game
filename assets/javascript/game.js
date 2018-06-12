@@ -73,13 +73,34 @@ document.onkeydown = function(Event) {
         guesses = 12;
         guessedLetters = [];
     }
-    
+
     var html = 
-        "<p>" + nameBlanks + "</p>" +
-        "<p>Wins: " + win + "</p>" +
-        "<p>Losses: " + losses + "</p>" +
-        "<p>Guesses Left: " + guesses + "</p>" +
-        "<p>Guessed Letters: " + guessedLetters + "</p>";
+        "<p>" + nameBlanks + "</p>";
 
     document.querySelector("#game").innerHTML = html;
+
+    //display wins on on html
+    var htmlWins = 
+        "<p>wins: " + win + "</p>";
+
+    document.querySelector("#wins").innerHTML = htmlWins;
+
+    //displays guesses left
+    var htmlGuessesLeft = 
+        "<p>Guesses Left: " + guesses + "</p>";
+
+    document.querySelector("#guessesLeft").innerHTML = htmlGuessesLeft;
+
+    //display losses on on html
+    var htmlLosses = 
+        "<p>losses: " + losses + "</p>";
+
+    document.querySelector("#losses").innerHTML = htmlLosses;
+
+    //displays guessed letters
+    var htmlGuessed = 
+        "<p>guessed letters:</p>" +
+        "<p>" + guessedLetters + "</p>";
+        
+    document.querySelector("#guessed").innerHTML = htmlGuessed;
 }
