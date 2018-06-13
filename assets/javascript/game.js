@@ -1,4 +1,17 @@
-var computerChoices = [["s","t","a","r","k"],["t","y","r","e","l","l"],["l","a","n","n","i","s","t","e","r"],["t","a","r","g","a","r","i","a","n"],["g","r","e","y","j","o","y"]]
+var computerChoices = [["s","t","a","r","k"],
+    ["t","y","r","e","l","l"],
+    ["l","a","n","n","i","s","t","e","r"],
+    ["t","a","r","g","a","r","y","a","n"],
+    ["g","r","e","y","j","o","y"],
+    ["a","r","r","y","n"],
+    ["m","a","r","t","e","l","l"],
+    ["b","a","r","a","t","h","e","o","n"],
+    ["b","a","e","l","i","s","h"],
+    ["t","u","l","l","y"],
+    ["b","o","l","t","o","n"],
+    ["s","e","a","w","o","r","t","h"],
+    ["s","n","o","w"],
+    ["m","o","r","m","o","n","t"]]
 var availableUserChoices = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
 var win = 0;
 var losses = 0;
