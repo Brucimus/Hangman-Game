@@ -86,7 +86,9 @@ document.onkeydown = function(Event) {
         guesses = 12;
         guessedLetters = [];
         audioElement.play();
-    } else {
+
+    //reduces score when guess is wrong
+    } else if (nameBlanks.includes(userGuess)===false) {
         guesses--;
     }
 
@@ -113,7 +115,7 @@ document.onkeydown = function(Event) {
 
     //displays guesses left
     var htmlGuessesLeft = 
-        "<p>Guesses Left: " + guesses + "</p>";
+        "<p>Incorrect Guesses Left: " + guesses + "</p>";
 
     document.querySelector("#guessesLeft").innerHTML = htmlGuessesLeft;
 
