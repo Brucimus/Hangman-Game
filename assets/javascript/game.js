@@ -1,3 +1,4 @@
+//Computer options
 var computerChoices = [["s","t","a","r","k"],
     ["t","y","r","e","l","l"],
     ["l","a","n","n","i","s","t","e","r"],
@@ -12,7 +13,11 @@ var computerChoices = [["s","t","a","r","k"],
     ["s","e","a","w","o","r","t","h"],
     ["s","n","o","w"],
     ["m","o","r","m","o","n","t"]]
+
+//User Choices
 var availableUserChoices = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
+
+//Variables
 var win = 0;
 var losses = 0;
 var guesses = 12;
@@ -22,6 +27,10 @@ var pickName = -1;
 var guessedLetterInWord = false;
 var tempLetter = "";
 var gameOver = true;
+
+//music variable
+var audioElement = document.createElement("audio");
+audioElement.setAttribute("src", "assets/music/game_of_thrones.mp3");
 
 document.onkeydown = function(Event) {
     var userGuess = event.key;
@@ -69,16 +78,19 @@ document.onkeydown = function(Event) {
 
     }
 
+    //checks if win occurs
     if (nameBlanks.includes("_") === false) {
         win++;
         gameOver = true;
         nameBlanks = "";
         guesses = 12;
         guessedLetters = [];
+        audioElement.play();
     } else {
         guesses--;
     }
 
+    //check if loss occurs
     if (guesses == 0) {
         losses++;
         gameOver = true;
@@ -87,6 +99,7 @@ document.onkeydown = function(Event) {
         guessedLetters = [];
     }
 
+    //displays word with blanks
     var html = 
         "<p>" + nameBlanks + "</p>";
 
